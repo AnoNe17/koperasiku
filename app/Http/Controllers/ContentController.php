@@ -256,6 +256,7 @@ class ContentController extends Controller
             } else {
                 // $logoBisnis = $request->input('logo_bisnis_old')[1];
                 $logoBisnis = "Tidak ada";
+                // asd
             }
 
             return $logoBisnis;
