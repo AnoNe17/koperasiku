@@ -24,13 +24,17 @@ class HomeController extends Controller
         $keuntungan_koperasi = Keuntungan::all();
         $keunggulan_koperasi = Keunggulan::all();
 
-        return view('home.index', [
-            'content' => $content,
-            'popular_bisnis' => $popular_bisnis,
-            'fitur_koperasi' => $fitur_koperasi,
-            'keuntungan_koperasi' => $keuntungan_koperasi,
-            'keunggulan_koperasi' => $keunggulan_koperasi,
-        ]);
+        if ($content != null) {
+            return view('home.index', [
+                'content' => $content,
+                'popular_bisnis' => $popular_bisnis,
+                'fitur_koperasi' => $fitur_koperasi,
+                'keuntungan_koperasi' => $keuntungan_koperasi,
+                'keunggulan_koperasi' => $keunggulan_koperasi,
+            ]);
+        } else {
+            return view('content.create');
+        }
     }
 
     /**
