@@ -43,7 +43,7 @@
     <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
         <div class="container">
             <a href="index.html">
-                <img src="{{ asset('assets_landing/logo/'.$content->logo ) }}" alt="Logo" style="width: 183px; height: 32px;"> 
+                <img src="{{ asset('assets_landing/logo/'.$content->logo ) }}" alt="Logo" style="width: 183px; height: 40px;"> 
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="fa fa-bars"></span>
@@ -54,10 +54,8 @@
                     <a href="about.html" class="nav-item nav-link me-4">About</a>
                     <a href="service.html" class="nav-item nav-link me-4">Service</a>
                     <a href="contact.html" class="nav-item nav-link me-4">Contact</a>
-                    <div class="navbar-nav mx-auto">
                         <a href="about.html" class="nav-item nav-link me-4">Sign In</a>
                         <a href="service.html" class="nav-item nav-link me-4">Sign Up</a>
-                    </div>
                 </div>
             </div>
 
@@ -109,17 +107,15 @@
             </div> --}}
             <div class="row justify-content-center pb-3">
                 <div class="col-lg-6 wow fadeInUp justify-content-center ps-4 ms-3" data-wow-delay="0.1s">
-                    <div class="pb-3">
-                        <div class="row">
-                            
-                            @foreach ($popular_bisnis as $popular)
-                            <div class="col-md-3 mb-3">
-                                <img class="border rounded-3 ps-4 pe-4 py-3" src="{{ asset('assets_landing/logo_bisnis/'.$popular->logo_bisnis ) }}" alt="... " style="width: 130px; height: 130px"/>
-                            </div>
-                            @endforeach
-                            
+                    <div class="row ">
+                        
+                        @foreach ($popular_bisnis as $popular)
+                        <div class="col-md-3 mb-3 d-flex justify-content-center">
+                            <img class="border rounded-3 ps-4 pe-4 py-3" src="{{ asset('assets_landing/logo_bisnis/'.$popular->logo_bisnis ) }}" alt="... " style="width: 130px; height: 130px"/>
                         </div>
-                    </div
+                        @endforeach
+                        
+                    </div>
                 </div>
             </div>
             <!-- <div class="row no-gutters justify-content-center">
@@ -177,21 +173,16 @@
                 <div class="col-md-4">
                     @foreach ($fitur_koperasi as $key => $fitur)
                         @if ($key <= 3)
-                            <figure class="text-end" data-aos="fade-up">
+                            <figure id="" class="text-end menu" data-aos="fade-up" >
                                 <p>{{ $fitur->tittle_fitur }}</p>
                                 <h6 style="font-size: 12px;">{{ $fitur->content_fitur }}</h6>
                             </figure> 
                         @endif
                     @endforeach
-                    
                 </div>
-
-                <div class="col-md-4 p-0" data-aos="fade-up">
+                <div class="col-md-4 p-0" data-aos="fade-up" id="phone">
                     <img src="{{ asset('assets_landing/img/phone.png') }}" alt=" ">
                 </div>
-
-                
-
                 <div class="col-md-4" wow fadeIn data-wow-delay=" 0.1s">
                     @foreach ($fitur_koperasi as $key => $fitur)
                         @if ($key >= 4)
@@ -205,12 +196,9 @@
                 </div>
             </div>
 
-            <div class="row content p-5" style="background-color: var(--main);">
-                <div class="col-md-5 order-1 order-md-3" data-aos="fade-left ">
-                    <img src="{{ asset('assets_landing/img/hard.png') }}" class="img-fluid pt-3" alt=" ">
-                </div>
+            <div class="row content py-4 px-3 " style="background-color: var(--main);">
 
-                <div class="col-md-6 ms-4 my-3" data-aos="fade-left">
+                <div class="col-md-6" data-aos="fade-left">
                     <div class="d-flex align-items-center mb-3 ">
                         <h2>Keunggulan Koperasiku</h2>
                     </div>
@@ -223,17 +211,18 @@
                         </div>
                         <h6 style="font-size: 12px; color: var(--vav);" ">{{ $keunggulan->content_keunggulan }}</h6>
                     @endforeach
-                    
-                    
                 </div>
+
+                <div class="col-md-6" data-aos="fade-left">
+                    <img src="{{ asset('assets_landing/img/hard.png') }}" class="img-fluid pt-3" alt=" ">
+                </div>
+
+                
             </div>
 
             <div class=" row content ">
-                <div class=" col-md-4 " data-aos=" fade-right ">
-                    <img src="{{ asset('assets_landing/img/think.png') }} " class=" img-fluid ms-4 " alt=" ">
-                </div>
-                <div class=" col-md-1 ">
-
+                <div class=" col-md-4 " data-aos="fade-left">
+                    <img src="{{ asset('assets_landing/img/think.png') }} " class=" img-fluid " alt=" ">
                 </div>
 
                 <div class=" col-md-7 p-3 ">
@@ -246,12 +235,65 @@
         </div>
     </section>
     <!-- End Details Section -->
+    {{-- <div class="row">
+        <div class="col-md-4">asd</div>
+        <div class="col-md-7">
+            <h4 class=" desc py-2 ps-1 "><i class=" bi bi-geo-alt-fill me-4"></i>{{ $content->alamat }}</h4>
+        </div>
+    </div> --}}
+
+    {{-- <div class="row">
+        <div class="col-xs-6 col-md-2">.col-xs-12 .col-md-8</div>
+        <div class="col-xs-6 col-md-10">.col-xs-6 .col-md-4</div>
+    </div> --}}
 
     <!-- ======= Contact Section ======= -->
     <section id=" contact " class=" contact ">
         <div class=" container " data-aos=" fade-up ">
             <div class=" row ">
-                <div class=" col-md-5 order-1 order-md-2 pt-5 " data-aos=" fade-left ">
+                <div class=" col-md-6 p-1" data-aos=" fade-up ">
+                    <div>
+                        <h1 class=" animated zoomIn "><span style="color: #ea9a08">Partnership in</span><br>Mind</h1>
+                    </div>
+                    <h4 class=" my-3"><i class=" bi bi-geo-alt-fill "></i>{{ $content->alamat }}</h4>
+                    <h4 class=" my-3"><i class=" bi bi-geo-alt-fill "></i>{{ $content->email }}</h4>
+                    <h4 class=" my-3"><i class=" bi bi-geo-alt-fill "></i>{{ $content->no_telp }}</h4>
+                    {{-- <div class="row">
+                        <div class="col-xs-2 col-md-2"><i class=" bi bi-geo-alt-fill "></i></div>
+                        <div class="col-xs-10 col-md-10"><h5 >{{ $content->email }}</h5></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2 col-md-2"><i class=" bi bi-geo-alt-fill "></i></div>
+                        <div class="col-xs-10 col-md-10"><h5 >{{ $content->no_telp }}</h5></div>
+                    </div> --}}
+                    
+                    {{-- <div class="row mt-2">
+                        <div class="mt-2 col-md-1 p-1">
+                            <i class=" bi bi-geo-alt-fill "></i>
+                        </div>
+                        <div class=" col-md-10 ">
+                            <h5 >{{ $content->alamat }}</h5>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class=" col-md-1 p-1">
+                            <i class=" bi bi-geo-alt-fill "></i>
+                        </div>
+                        <div class=" col-md-10 py-3 ">
+                            <h5>{{ $content->email }}</h5>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class=" col-md-1 p-1">
+                            <i class=" bi bi-geo-alt-fill "></i>
+                        </div>
+                        <div class=" col-md-10 py-3 ">
+                            <h5>{{ $content->no_telp }}</h5>
+                        </div>
+                    </div> --}}
+                </div>
+                <div class=" col-md-6 p-1" data-aos=" fade-left ">
                     <form action=" forms/contact.php " method=" post " role=" form " class=" php-email-form " data-aos=" fade-up ">
                         <div class=" form-group ">
                             <input placeholder=" Your Name " type=" text " name=" name " class=" form-control " id=" name " required>
@@ -274,36 +316,7 @@
                     </form>
                 </div>
                 
-                <div class=" col-md-7 p-5 order-2 order-md-1 " data-aos=" fade-up ">
-                    <div>
-                        <h1 class=" animated zoomIn "><span class=" mind ">Partnership in</span><br>Mind</h1>
-                    </div>
-                    <div class=" row pb-5 ">
-                        <div class=" col-md-1 ">
-                            <i class=" bi bi-geo-alt-fill "></i>
-                        </div>
-                        <div class=" col-md-6 ">
-                            <h4 class=" ">{{ $content->alamat }}</h4>
-
-                        </div>
-                    </div>
-                    <div class=" row pb-5 ">
-                        <div class=" col-md-1 ">
-                            <i class=" bi bi-geo-alt-fill "></i>
-                        </div>
-                        <div class=" col-md-6 align-middle ">
-                            <h4 class=" align-middle py-3 ">{{ $content->email }}</h4>
-                        </div>
-                    </div>
-                    <div class=" row ">
-                        <div class=" col-md-1 ">
-                            <i class=" bi bi-geo-alt-fill "></i>
-                        </div>
-                        <div class=" col-md-6 py-3 ">
-                            <h4>{{ $content->no_telp }}</h4>
-                        </div>
-                    </div>
-                </div>
+                
             </div>    
         </div>
     </section>
@@ -367,6 +380,18 @@
                 <!-- Designed by <a href=" https://bootstrapmade.com/ ">BootstrapMade</a> -->
     </footer>
 <!-- End Footer -->
+
+    <style>
+        @media only screen and (max-width: 800px) {
+            #phone{
+                display: none;
+                /* background-color: red; */
+            }
+            
+            }
+    </style>
+
+    
 
 
 
