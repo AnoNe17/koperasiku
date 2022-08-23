@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ContentController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,4 +26,13 @@ Route::prefix('content')->group(function () {
     Route::post('store', [ContentController::class, 'store'])->name('content.store');
     Route::get('edit', [ContentController::class, 'edit'])->name('content.edit');
     Route::post('update', [ContentController::class, 'update'])->name('content.update');
+});
+
+Route::prefix('users')->group(function () {
+    Route::get('/', 'UsersController@index')->name('users');
+    Route::get('create', [UsersController::class, 'create'])->name('users.create');
+    Route::post('store', [UsersController::class, 'store'])->name('users.store');
+    Route::get('edit', [UsersController::class, 'edit'])->name('users.edit');
+    Route::post('update', [UsersController::class, 'update'])->name('users.update');
+    Route::get('register', [UsersController::class, 'register'])->name('users.register');
 });

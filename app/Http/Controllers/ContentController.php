@@ -29,7 +29,16 @@ class ContentController extends Controller
      */
     public function create()
     {
-        return view('content.create');
+        $content = Content::first();
+
+        if ($content = null) {
+            $content->nama = "Koperasiku";
+            $content->logo = "asd";
+        }
+
+        return view('content.create', [
+            'content' => $content,
+        ]);
     }
 
     /**

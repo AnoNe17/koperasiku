@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>{{ $content->nama }}</title>
+    <title>KoperasiKu</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <!-- Favicons -->
-    <link href="{{ asset('assets_landing/logo/'.$content->logo ) }}" rel="icon">
+    {{-- <link href="{{ asset('assets_landing/logo/'.$content->logo ) }}" rel="icon"> --}}
     {{-- <link href="{{ asset('assets_landing/img/apple-touch-icon.png') }}" rel="apple-touch-icon"> --}}
 
     <!-- Google Fonts -->
@@ -42,7 +42,7 @@
           <div class="modal-dialog">
               <div class="modal-content">
                   <div class="modal-header">
-                      <h5 class="modal-title text-success" id="staticBackdropLabel"><b>{{ session('success') }}<i class="bi bi-emoji-smile"></i></b></h5>
+                      <h5 class="modal-title text-success" id="staticBackdropLabel"><b>{{ session('success') }}</b></h5>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
               </div>
@@ -62,7 +62,7 @@
           <div class="modal-dialog">
               <div class="modal-content">
                   <div class="modal-header">
-                      <h5 class="modal-title text-danger" id="staticBackdropLabel"><b>{{ session('failed') }}<i class="bi bi-emoji-smile"></i></b></h5>
+                      <h5 class="modal-title text-danger" id="staticBackdropLabel"><b>{{ session('failed') }}</b></h5>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
               </div>

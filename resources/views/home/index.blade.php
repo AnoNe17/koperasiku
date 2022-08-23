@@ -54,8 +54,8 @@
                     <a href="about.html" class="nav-item nav-link me-4">About</a>
                     <a href="service.html" class="nav-item nav-link me-4">Service</a>
                     <a href="contact.html" class="nav-item nav-link me-4">Contact</a>
-                        <a href="about.html" class="nav-item nav-link me-4">Sign In</a>
-                        <a href="service.html" class="nav-item nav-link me-4">Sign Up</a>
+                    <a href="about.html" class="nav-item nav-link me-4">Sign In</a>
+                    <a href="{{ route('users.register')}}" class="nav-item nav-link me-4">Sign Up</a>
                 </div>
             </div>
 
@@ -156,7 +156,6 @@
                     </div>
                 </div>
             </div> -->
-
         </div>
     </section>
     <!-- End App Features Section -->
